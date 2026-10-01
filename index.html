@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>[Lab 03] Performance Marketing — Xây hệ thống từ chiến lược đến doanh thu</title>
-<meta name="description" content="Lab 03: Performance Marketing for SME — xây hệ thống từ chiến lược đến doanh thu. Khai giảng 30.09.2026, học online qua Google Meet, 7 buổi.">
+<meta name="description" content="Lab 03: Performance Marketing for SME — xây hệ thống từ chiến lược đến doanh thu. Khai giảng 02.11.2026, học online qua Google Meet, 7 buổi.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -318,6 +318,15 @@
   .lecturer__photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:60% 40%;border-radius:1pt;}
   .lecturer__quote{margin-top:32px;padding-left:24px;border-left:2px solid var(--black);font-size:clamp(16px,1.6vw,20px);line-height:1.6;max-width:62ch;}
   @media (max-width:760px){.lecturer{grid-template-columns:1fr;}.lecturer__photo{max-width:320px;}}
+  .price__amount{margin-top:14px;font-size:clamp(36px,6vw,72px);font-weight:700;letter-spacing:-.02em;line-height:1;}
+  .price__old{font-size:clamp(16px,1.6vw,20px);color:var(--grey-muted);display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .price__badge{font-family:var(--ff-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--black);border:1px solid var(--grey-line);padding:4px 10px;border-radius:100px;}
+  .section--dark{background:var(--black);color:var(--white);}
+  .section--dark .eyebrow{color:rgba(255,255,255,.5);}
+  .section--dark .body-md{color:rgba(255,255,255,.65);}
+  .section--dark .price__old{color:rgba(255,255,255,.45);}
+  .section--dark .price__badge{color:var(--white);border-color:rgba(255,255,255,.3);}
+  .section--dark + .cta{border-top:1pt solid rgba(255,255,255,.35);}
   .acc-item summary .idx--session{width:64px;white-space:nowrap;}
   .acc-item:has(.idx--session) .body-inner-pad{padding-left:88px;}
   @media (max-width:560px){.acc-item:has(.idx--session) .body-inner-pad{padding-left:0;}}
@@ -358,7 +367,7 @@
 
   <div class="hero__meta">
     <span class="mono-tag">💻 Online — Google Meet</span>
-    <span class="mono-tag">📅 Khai giảng 30.09.2026</span>
+    <span class="mono-tag">📅 Khai giảng 02.11.2026</span>
     <span class="mono-tag">🕢 19:30–21:30, Thứ 4 &amp; Thứ 6</span>
     <span class="mono-tag">📚 7 buổi</span>
     <span class="mono-tag">🟢 Đang mở đăng ký</span>
@@ -535,24 +544,6 @@
     </div>
   </section>
 
-  <!-- ƯU ĐÃI -->
-  <section class="section" id="uu-dai">
-    <div class="section__label"><span class="eyebrow">Ưu đãi khóa học</span></div>
-    <div class="section__content">
-      <div class="rows reveal">
-        <div class="row">
-          <div class="row__index">🎁</div>
-          <div><div class="row__title">Giảm 10% khi đặt trước (miễn phí) trước ngày 20/09/2026</div></div>
-        </div>
-        <div class="row">
-          <div class="row__index">🎁</div>
-          <div><div class="row__title">Giảm 15% khi đăng ký theo nhóm (2 bạn trở lên)</div></div>
-        </div>
-      </div>
-      <p class="body-md reveal" style="margin-top:24px"><em>Lưu ý: Toàn bộ ưu đãi chỉ có hiệu lực đến ngày 27/9/2026.</em></p>
-    </div>
-  </section>
-
   <!-- QUYỀN LỢI -->
   <section class="section" id="quyen-loi">
     <div class="section__label"><span class="eyebrow">Quyền lợi học viên</span></div>
@@ -609,8 +600,8 @@
         <div class="row">
           <div class="row__index">02</div>
           <div>
-            <div class="row__title">Hoàn tất học phí trước ngày 27/09/2026</div>
-            <div class="row__desc">Phần học phí còn lại cần được thanh toán trước ngày <strong>27/09/2026</strong>.</div>
+            <div class="row__title">Hoàn tất học phí trước ngày 31/10/2026</div>
+            <div class="row__desc">Phần học phí còn lại cần được thanh toán trước ngày <strong>31/10/2026</strong>.</div>
             <div class="row__desc"><em>Lưu ý: Thanh toán sau mốc này, toàn bộ ưu đãi sẽ không còn hiệu lực. Chúng mình sẽ KHÔNG HOÀN TRẢ học phí với MỌI LÝ DO.</em></div>
           </div>
         </div>
@@ -644,13 +635,13 @@
           </div></div></div>
         </details>
         <details class="acc-item">
-          <summary><span class="idx">03</span><span class="ttl">Tôi có thể cộng dồn ưu đãi đặt trước và ưu đãi đăng ký theo nhóm không?</span><span class="plus"></span></summary>
+          <summary><span class="idx">03</span><span class="ttl">Ưu đãi học phí được áp dụng như thế nào?</span><span class="plus"></span></summary>
           <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <p>Có nha. Bạn được áp dụng giảm 10% khi đặt trước và giảm tiếp 15% nếu đăng ký theo nhóm từ 2 người trở lên (miễn là hoàn tất thanh toán đúng hạn cho tụi mình).</p>
+            <p>Bạn được giảm 10% học phí, từ 3,490,000 VND còn 3,141,000 VND, khi đăng ký trước ngày 31/10/2026 (miễn là hoàn tất thanh toán đúng hạn cho tụi mình).</p>
           </div></div></div>
         </details>
         <details class="acc-item">
-          <summary><span class="idx">04</span><span class="ttl">Điều gì xảy ra nếu tôi thanh toán sau ngày 27/09/2026?</span><span class="plus"></span></summary>
+          <summary><span class="idx">04</span><span class="ttl">Điều gì xảy ra nếu tôi thanh toán sau ngày 31/10/2026?</span><span class="plus"></span></summary>
           <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
             <p>Sau mốc thời gian này, toàn bộ ưu đãi giảm giá sẽ không còn hiệu lực. Bạn sẽ cần thanh toán theo mức học phí gốc để tham gia lớp cùng tụi mình.</p>
           </div></div></div>
@@ -683,11 +674,23 @@
     </div>
   </section>
 
+  <!-- HỌC PHÍ -->
+  <section class="section section--dark" id="hoc-phi">
+    <div class="section__label"><span class="eyebrow">Học phí</span></div>
+    <div class="section__content">
+      <div class="price reveal">
+        <p class="price__old"><s>3,490,000 VND</s> <span class="price__badge">Ưu đãi 10%</span></p>
+        <div class="price__amount">3,141,000 VND</div>
+      </div>
+      <p class="body-md reveal" style="margin-top:24px"><em>Lưu ý: Ưu đãi có hiệu lực khi đăng ký trước ngày 31/10/2026.</em></p>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta" id="dang-ky">
     <div class="eyebrow reveal" style="color:rgba(255,255,255,.5)">Đăng ký</div>
     <h2 class="h-display reveal" style="margin-top:20px">đăng ký khóa học<br>ngay hôm nay</h2>
-    <p class="cta__sub reveal">Khai giảng 30.09.2026 — học online qua Google Meet, 19:30–21:30 thứ 4 và thứ 6 hàng tuần.</p>
+    <p class="cta__sub reveal">Đặt trước miễn phí để giữ ưu đãi 10% — áp dụng khi đăng ký trước ngày 31/10/2026.</p>
     <a class="btn reveal" href="https://docs.google.com/forms/d/e/1FAIpQLSd73mCPdU_inwzdKn80i4Xcv_J9pYE5-rxLw2jJ-RfnESPWFg/viewform?usp=publish-editor">👉 Đặt trước miễn phí</a>
   </section>
 
@@ -696,7 +699,7 @@
 <footer>
   <div>
     <strong>Khai giảng</strong>
-    30.09.2026
+    02.11.2026
   </div>
   <div>
     <strong>Lịch học</strong>
