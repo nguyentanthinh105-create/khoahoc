@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[Lab 03] Performance Marketing — Xây hệ thống từ chiến lược đến doanh thu</title>
-<meta name="description" content="Lab 03: Performance Marketing for SME — xây hệ thống từ chiến lược đến doanh thu. Khai giảng 02.11.2026, học online qua Google Meet, 7 buổi.">
+<title>Các khóa học tại Entity LAB — Learn less, do more</title>
+<meta name="description" content="Tổng hợp các khóa học và workshop Marketing của Entity LAB dành cho chủ doanh nghiệp SME và team marketing 1–3 người: Lab 03 Performance Marketing, Free Workshop Series và các Lab sắp ra mắt.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +13,14 @@
 <style>
   @font-face{
     font-family:'InterKaren';
-    src:url('fonts/INTERKAREN-REGULAR.TTF') format('truetype');
+    src:url('INTERKAREN-REGULAR.TTF') format('truetype');
     font-weight:100 599;
     font-style:normal;
     font-display:swap;
   }
   @font-face{
     font-family:'InterKaren';
-    src:url('fonts/INTERKAREN-BOLD.TTF') format('truetype');
+    src:url('INTERKAREN-BOLD.TTF') format('truetype');
     font-weight:600 900;
     font-style:normal;
     font-display:swap;
@@ -52,9 +52,6 @@
   ul{list-style:none;}
   button{font:inherit;background:none;border:none;color:inherit;cursor:pointer;}
 
-  .wrap{padding-inline:var(--gutter);}
-  .rule{border-top:1px solid var(--grey-line);}
-
   /* ---------- Typography scale ---------- */
   .eyebrow{
     font-family:var(--ff-mono);
@@ -71,19 +68,12 @@
     line-height:.96;
     text-transform:lowercase;
   }
-  .h-lead{
-    font-size:clamp(21px,3.6vw,42px);
-    font-weight:400;
-    line-height:1.28;
-    letter-spacing:-.01em;
-  }
   .h-title{
     font-size:clamp(20px,2.6vw,32px);
     font-weight:400;
     line-height:1.2;
     letter-spacing:-.01em;
   }
-  .body-lg{font-size:clamp(16px,1.6vw,20px);line-height:1.6;font-weight:400;}
   .body-md{font-size:clamp(14px,1.2vw,16px);line-height:1.7;color:#4a4a4a;}
   .mono-tag{
     font-family:var(--ff-mono);
@@ -128,7 +118,6 @@
   @media (max-width:860px){
     .nav-desktop{
       position:fixed;inset:0;background:var(--black);color:var(--white);
-      mix-blend-mode:normal;
       display:flex;flex-direction:column;justify-content:center;gap:28px;
       padding:0 var(--gutter);
       transform:translateY(-100%);
@@ -140,6 +129,7 @@
     .nav-cta{align-self:flex-start;}
     .menu-toggle{display:block;z-index:60;}
   }
+  .menu-toggle.is-open{color:var(--white);}
 
   /* ---------- Hero ---------- */
   .hero{
@@ -189,19 +179,11 @@
     .section{grid-template-columns:1fr;padding:72px var(--gutter);}
     .section__label{position:static;margin-bottom:28px;}
   }
+  .section--dark{background:var(--black);color:var(--white);}
+  .section--dark .eyebrow{color:rgba(255,255,255,.5);}
+  .section--dark .body-md{color:rgba(255,255,255,.65);}
 
-  /* ---------- Intro / statement ---------- */
-  .statement{max-width:52ch;}
-  .statement p{margin-top:22px;}
-  .statement strong{font-weight:600;}
-  .pull{
-    margin-top:56px;padding-left:28px;border-left:2px solid var(--black);
-    max-width:60ch;
-  }
-  .pull p{font-size:clamp(18px,2vw,24px);line-height:1.4;font-weight:400;}
-  .pull p + p{margin-top:16px;color:#555;font-size:clamp(15px,1.3vw,17px);}
-
-  /* ---------- Numbered persona / list rows ---------- */
+  /* ---------- Numbered list rows ---------- */
   .rows{border-top:1px solid var(--grey-line);}
   .row{
     display:grid;grid-template-columns:56px 1fr;gap:24px;
@@ -210,23 +192,50 @@
   .row__index{font-family:var(--ff-mono);font-size:14px;color:var(--grey-text);padding-top:4px;}
   .row__title{font-size:clamp(18px,1.8vw,22px);font-weight:500;}
   .row__desc{margin-top:8px;color:#555;font-size:clamp(14px,1.2vw,16px);line-height:1.6;max-width:62ch;}
-  .row--muted .row__title,
-  .row--muted .row__desc{color:var(--grey-muted);}
 
-  /* ---------- Two-column before / after ---------- */
-  .compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter);}
-  @media (max-width:760px){.compare{grid-template-columns:1fr;gap:56px;}}
-  .compare__col .eyebrow{margin-bottom:20px;display:block;}
-  .compare__item{
-    display:flex;gap:14px;padding:20px 0;border-top:1px solid var(--grey-line);
-    font-size:clamp(14px,1.2vw,16px);line-height:1.6;
+  /* ---------- Course list ---------- */
+  .courses{border-top:1px solid var(--grey-line);}
+  .course{
+    display:grid;grid-template-columns:1fr minmax(240px,300px);column-gap:clamp(24px,4vw,56px);row-gap:18px;
+    padding:44px 0;border-bottom:1px solid var(--grey-line);
   }
-  .compare__item span.mark{font-family:var(--ff-mono);flex-shrink:0;}
-  .compare--before .compare__item{color:var(--grey-muted);}
-  .compare--before .compare__item span.mark{color:var(--grey-muted);}
-  .compare--after .compare__item{color:var(--black);}
-  .compare__item em{display:block;margin-top:4px;font-style:normal;color:#777;font-size:.92em;}
-  .compare--after .compare__item em{color:#666;}
+  .course__banner{
+    grid-column:1 / -1;position:relative;display:block;overflow:hidden;
+    aspect-ratio:21/9;background:#f2f2f2;border-radius:1pt;margin-bottom:14px;
+  }
+  .course__banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease;}
+  a.course__banner:hover img{transform:scale(1.03);}
+  .course__banner--empty{border:1px dashed rgba(0,0,0,.18);background:#f7f7f7;}
+  @media (max-width:760px){.course__banner{aspect-ratio:16/9;}}
+  .course__code{grid-column:1 / -1;font-family:var(--ff-mono);font-size:14px;color:var(--grey-text);text-transform:uppercase;letter-spacing:.06em;}
+  .course__status{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--ff-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .course__status::before{content:'';width:7px;height:7px;border-radius:100%;background:var(--black);}
+  .course__status--soon{color:var(--grey-muted);}
+  .course__status--soon::before{background:transparent;border:1px solid var(--grey-muted);}
+  .course__title{margin-top:14px;font-size:clamp(24px,3.2vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.1;max-width:22ch;}
+  .course__desc{margin-top:16px;color:#555;font-size:clamp(14px,1.2vw,16px);line-height:1.7;max-width:60ch;}
+  .course__tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px;}
+  .course__aside{display:flex;flex-direction:column;gap:18px;}
+  .course__facts{border-top:1px solid var(--grey-line);}
+  .course__facts li{
+    display:flex;justify-content:space-between;gap:16px;
+    padding:10px 0;border-bottom:1px solid var(--grey-line);
+    font-size:14px;line-height:1.5;
+  }
+  .course__facts li span:first-child{color:var(--grey-text);}
+  .course__facts li span:last-child{text-align:right;}
+  .course__price{font-size:clamp(24px,2.6vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1;}
+  .course__price s{display:block;margin-bottom:6px;font-size:14px;font-weight:400;color:var(--grey-muted);letter-spacing:0;}
+  .btn--dark{background:var(--black);color:var(--white);justify-content:center;}
+  .btn--outline{background:transparent;color:var(--black);border:1px solid var(--black);justify-content:center;}
+  .course--soon .course__title,
+  .course--soon .course__desc{color:var(--grey-muted);}
+  @media (max-width:760px){
+    .course{grid-template-columns:1fr;row-gap:20px;}
+  }
 
   /* ---------- Accordion ---------- */
   .acc{border-top:1px solid var(--grey-line);}
@@ -260,39 +269,21 @@
     font-size:clamp(14px,1.2vw,16px);line-height:1.6;
   }
   .acc-item .body-inner-pad li::before{content:'—';position:absolute;left:0;color:var(--grey);}
-  .acc-item .output{
-    margin-top:20px;font-family:var(--ff-mono);font-size:12px;text-transform:uppercase;
-    letter-spacing:.06em;color:var(--black);
-  }
+  @media (max-width:560px){.acc-item .body-inner-pad{padding-left:0;}}
 
-  /* ---------- Media break ---------- */
-  .media-break{position:relative;overflow:hidden;}
-  .media-break img{width:100%;height:auto;}
-
-  /* ---------- Trainer ---------- */
-  .trainer{max-width:70ch;}
-  .trainer__quote{font-size:clamp(24px,4vw,52px);font-weight:400;line-height:1.15;letter-spacing:-.01em;}
-  .trainer__who{
-    margin-top:40px;display:flex;align-items:center;gap:18px;
-  }
-  .avatar{
-    width:56px;height:56px;border-radius:100%;background:var(--black);color:var(--white);
-    display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;flex-shrink:0;
-    overflow:hidden;
-  }
-  .avatar img{width:100%;height:100%;object-fit:cover;object-position:62% 45%;}
-  .trainer__who .name{font-weight:600;font-size:16px;}
-  .trainer__who .role{color:var(--grey-text);font-size:14px;margin-top:2px;}
+  /* ---------- Lecturer ---------- */
   .trainer__tags{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;}
+  .lecturer{display:grid;grid-template-columns:minmax(200px,340px) 1fr;gap:clamp(24px,4vw,56px);align-items:start;}
+  .lecturer__photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:60% 40%;border-radius:1pt;}
+  .lecturer__quote{margin-top:32px;padding-left:24px;border-left:2px solid var(--black);font-size:clamp(16px,1.6vw,20px);line-height:1.6;max-width:62ch;}
+  @media (max-width:760px){.lecturer{grid-template-columns:1fr;}.lecturer__photo{max-width:320px;}}
 
-  /* ---------- CTA ---------- */
-  .cta{
-    background:var(--black);color:var(--white);
-    padding:140px var(--gutter);text-align:center;
-  }
-  .cta .h-display{text-transform:lowercase;}
-  .cta__sub{margin:24px auto 0;max-width:46ch;color:rgba(255,255,255,.65);font-size:clamp(15px,1.4vw,18px);}
-  .cta .btn{margin-top:44px;}
+  /* ---------- Offer (dark) ---------- */
+  .offer{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter);border-top:1pt solid rgba(255,255,255,.25);}
+  .offer__item{padding-top:28px;}
+  .offer__num{font-size:clamp(40px,6vw,80px);font-weight:700;letter-spacing:-.02em;line-height:1;}
+  .offer__label{margin-top:14px;font-size:clamp(14px,1.2vw,16px);line-height:1.6;color:rgba(255,255,255,.65);max-width:30ch;}
+  @media (max-width:760px){.offer{grid-template-columns:1fr;gap:12px;}}
 
   /* ---------- Footer ---------- */
   footer{
@@ -302,6 +293,7 @@
     font-family:var(--ff-sans);font-size:13px;line-height:1.7;
   }
   footer strong{color:var(--white);font-weight:400;display:block;margin-bottom:6px;}
+  footer a{text-decoration:underline;text-underline-offset:3px;}
   footer .footer-logo{
     grid-column:1 / -1;
     margin-inline:calc(var(--gutter) * -1);
@@ -312,24 +304,6 @@
   @media (max-width:760px){
     footer{grid-template-columns:1fr 1fr;row-gap:32px;}
   }
-  .menu-toggle.is-open{color:var(--white);}
-
-  .lecturer{display:grid;grid-template-columns:minmax(200px,340px) 1fr;gap:clamp(24px,4vw,56px);align-items:start;}
-  .lecturer__photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:60% 40%;border-radius:1pt;}
-  .lecturer__quote{margin-top:32px;padding-left:24px;border-left:2px solid var(--black);font-size:clamp(16px,1.6vw,20px);line-height:1.6;max-width:62ch;}
-  @media (max-width:760px){.lecturer{grid-template-columns:1fr;}.lecturer__photo{max-width:320px;}}
-  .price__amount{margin-top:14px;font-size:clamp(36px,6vw,72px);font-weight:700;letter-spacing:-.02em;line-height:1;}
-  .price__old{font-size:clamp(16px,1.6vw,20px);color:var(--grey-muted);display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-  .price__badge{font-family:var(--ff-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--black);border:1px solid var(--grey-line);padding:4px 10px;border-radius:100px;}
-  .section--dark{background:var(--black);color:var(--white);}
-  .section--dark .eyebrow{color:rgba(255,255,255,.5);}
-  .section--dark .body-md{color:rgba(255,255,255,.65);}
-  .section--dark .price__old{color:rgba(255,255,255,.45);}
-  .section--dark .price__badge{color:var(--white);border-color:rgba(255,255,255,.3);}
-  .section--dark + .cta{border-top:1pt solid rgba(255,255,255,.35);}
-  .acc-item summary .idx--session{width:64px;white-space:nowrap;}
-  .acc-item:has(.idx--session) .body-inner-pad{padding-left:88px;}
-  @media (max-width:560px){.acc-item:has(.idx--session) .body-inner-pad{padding-left:0;}}
 </style>
 </head>
 <body>
@@ -337,12 +311,12 @@
 <header id="siteHeader">
   <a class="brand" href="#top"><img src="entity-lab-logo.png" alt="Entity Lab"></a>
   <nav class="nav-desktop" id="navDesktop">
-    <a href="#ve-khoa-hoc">Dành cho ai</a>
-    <a href="#chuong-trinh">Chương trình</a>
+    <a href="#khoa-hoc">Khóa học</a>
+    <a href="#lo-trinh">Lộ trình</a>
     <a href="#giang-vien">Giảng viên</a>
     <a href="#quyen-loi">Quyền lợi</a>
     <a href="#faq">FAQ</a>
-    <a class="nav-cta" href="#dang-ky">Đăng ký</a>
+    <a class="nav-cta" href="#khoa-hoc">Đăng ký</a>
   </nav>
   <button class="menu-toggle" id="menuToggle">Menu</button>
 </header>
@@ -355,171 +329,164 @@
       <video src="main1.mp4" poster="main_2_00000.png" autoplay muted loop playsinline preload="auto"></video>
     </div>
     <div class="hero__body">
-      <h1 class="h-display hero__title reveal">[Lab 03] Performance Marketing<br>Xây hệ thống từ chiến lược đến doanh thu</h1>
-      <p class="hero__sub reveal">Lab 03 — Xây hệ thống từ chiến lược đến doanh thu. Làm chủ hệ thống Performance Marketing for SME chuẩn Fullstack với lộ trình thực chiến: từ lập kế hoạch, chuẩn hóa Content, bứt phá doanh số qua quảng cáo đến đo lường và tối ưu hiệu quả từng đồng ngân sách.</p>
+      <h1 class="h-display hero__title reveal">Các khóa học<br>tại Entity LAB</h1>
+      <p class="hero__sub reveal">Learn less, do more. Các khóa học và workshop Marketing thực chiến dành cho chủ doanh nghiệp SME và team marketing 1–3 người — học đúng bài toán đang gặp, cầm về hệ thống dùng được ngay.</p>
       <div class="hero__actions reveal">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd73mCPdU_inwzdKn80i4Xcv_J9pYE5-rxLw2jJ-RfnESPWFg/viewform?usp=publish-editor">Đặt trước miễn phí</a>
-        <a class="btn btn--ghost" href="#chuong-trinh">Xem chương trình →</a>
+        <a class="btn" href="#khoa-hoc">Xem các khóa học</a>
+        <a class="btn btn--ghost" href="#lo-trinh">Lộ trình học →</a>
       </div>
     </div>
     <div class="scroll-cue">Cuộn xuống</div>
   </section>
 
   <div class="hero__meta">
-    <span class="mono-tag">💻 Online — Google Meet</span>
-    <span class="mono-tag">📅 Khai giảng 02.11.2026</span>
-    <span class="mono-tag">🕢 19:30–21:30, Thứ 2 &amp; Thứ 6</span>
-    <span class="mono-tag">📚 7 buổi</span>
-    <span class="mono-tag">🟢 Đang mở đăng ký</span>
+    <span class="mono-tag">💻 Học online</span>
+    <span class="mono-tag">🎯 SME &amp; team 1–3 người</span>
+    <span class="mono-tag">🟢 Lab 03 đang mở đăng ký</span>
+    <span class="mono-tag">📡 Workshop miễn phí T3 &amp; T5</span>
   </div>
 
-  <!-- DÀNH CHO AI -->
-  <section class="section" id="ve-khoa-hoc">
-    <div class="section__label"><span class="eyebrow">Khóa học này dành cho ai</span></div>
+  <!-- VỀ ENTITY LAB -->
+  <section class="section" id="ve-entity-lab">
+    <div class="section__label"><span class="eyebrow">Học tại Entity LAB</span></div>
     <div class="section__content">
-      <p class="h-title reveal" style="max-width:40ch"><strong>Khóa học này sinh ra cho doanh nghiệp làm marketing với nguồn lực hạn chế. Không phải mô hình có phòng ban 10 người và ngân sách không giới hạn.</strong> Đây là cách vận hành Performance Marketing khi bạn phải tự làm gần như mọi thứ.</p>
+      <p class="h-title reveal" style="max-width:42ch"><strong>Mỗi khóa học là một “Lab” — nơi bạn giải một bài toán thật của doanh nghiệp, không phải nghe lý thuyết suông.</strong> Mọi thứ được thiết kế cho đội ngũ nhỏ, ngân sách giới hạn nhưng vẫn phải tăng trưởng.</p>
 
       <div class="rows reveal" style="margin-top:48px">
         <div class="row">
           <div class="row__index">01</div>
           <div>
-            <div class="row__title">Chủ doanh nghiệp SME</div>
-            <div class="row__desc">Đang chi tiền quảng cáo nhưng không biết tiền chảy đi đâu, đơn về từ đâu, và điểm nào trong doanh nghiệp đang tắc nghẽn.</div>
+            <div class="row__title">Thực chiến cho SME</div>
+            <div class="row__desc">Nội dung xuất phát từ bài toán của doanh nghiệp nhỏ: nguồn lực hạn chế, một người làm nhiều việc, mỗi đồng ngân sách đều phải có lý do.</div>
           </div>
         </div>
         <div class="row">
           <div class="row__index">02</div>
           <div>
-            <div class="row__title">Marketer in-house team 1–3 người</div>
-            <div class="row__desc">Một mình gánh từ research, chiến lược, chạy ads đến đọc số. Cần một hệ thống tinh gọn thay vì chắp vá từng mảnh.</div>
+            <div class="row__title">Mỗi buổi có một đầu ra</div>
+            <div class="row__desc">Kết thúc mỗi buổi là một sản phẩm cụ thể — framework, kế hoạch, bảng KPI, dashboard — để bạn mang về áp dụng ngay.</div>
           </div>
         </div>
         <div class="row">
           <div class="row__index">03</div>
           <div>
-            <div class="row__title">Người mới chuyển sang Performance</div>
-            <div class="row__desc">Biết chạy ads nhưng chưa có tư duy data-driven, chưa phân biệt được Performance với Brand và Digital Marketing.</div>
+            <div class="row__title">AI đi cùng hệ thống</div>
+            <div class="row__desc">Template AI, Claude Skill và workflow tự động được soạn sẵn để team ít người vẫn vận hành marketing trơn tru.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GIÚP GÌ -->
-  <section class="section" id="loi-ich">
-    <div class="section__label"><span class="eyebrow">Khóa học giúp gì cho bạn</span></div>
+  <!-- DANH SÁCH KHÓA HỌC -->
+  <section class="section" id="khoa-hoc">
+    <div class="section__label"><span class="eyebrow">Danh sách khóa học</span></div>
     <div class="section__content">
-      <p class="h-title reveal" style="max-width:44ch"><strong>Bạn cầm về một hệ thống chạy được, không phải một tập slide.</strong> Mỗi buổi giải quyết một mắt xích trong chuỗi: nền tảng → research → chiến lược → data → dòng Lead → tự động hóa.</p>
+      <p class="h-title reveal" style="max-width:44ch">Bắt đầu miễn phí với <strong>Workshop Series</strong>, đi sâu cùng các <strong>Lab</strong> chuyên đề. Chọn đúng bài toán bạn đang cần giải.</p>
 
-      <div class="compare reveal" style="margin-top:56px">
-        <div class="compare__col compare--before">
-          <span class="eyebrow">Trước đây</span>
-          <div class="compare__item"><span class="mark">×</span><div>Chạy theo cảm tính<em>Chạy ads theo cảm tính, không phân biệt được mình đang tiêu tiền cho Brand hay cho Performance.</em></div></div>
-          <div class="compare__item"><span class="mark">×</span><div>Đổ thêm ngân sách<em>Đơn giản là tăng budget, nhưng không biết vấn đề thật sự nằm ở đâu trong doanh nghiệp.</em></div></div>
-          <div class="compare__item"><span class="mark">×</span><div>Nhìn số mà không hiểu<em>Mở bảng số liệu nhưng không biết chỉ số nào cốt lõi, tối ưu gì tiếp theo cho đúng.</em></div></div>
-          <div class="compare__item"><span class="mark">×</span><div>Lead rơi rớt<em>Lead về rồi nguội dần, team 1–3 người làm thủ công không xuể, chốt chậm và mất đơn.</em></div></div>
-        </div>
-        <div class="compare__col compare--after">
-          <span class="eyebrow">Sau khóa học</span>
-          <div class="compare__item"><span class="mark">✓</span><div>Chạy theo mục tiêu<em>Biết rõ mỗi đồng ngân sách đang phục vụ cấp độ mục tiêu nào.</em></div></div>
-          <div class="compare__item"><span class="mark">✓</span><div>Sửa đúng chỗ nghẽn<em>Đọc được bối cảnh và phễu Marketing, xác định đúng điểm tắc nghẽn trước khi tăng thêm chi phí.</em></div></div>
-          <div class="compare__item"><span class="mark">✓</span><div>Ra quyết định bằng data<em>Nắm các chỉ số Marketing cốt lõi, phân tích data để thấy bức tranh tổng thể và tối ưu có cơ sở.</em></div></div>
-          <div class="compare__item"><span class="mark">✓</span><div>Kiểm soát dòng Lead<em>Thu hút Lead rẻ hơn, nuôi dưỡng để rút ngắn thời gian chốt, dùng AI và CRM tự động cho team tinh gọn.</em></div></div>
-        </div>
+      <div class="courses reveal" style="margin-top:48px">
+
+        <!-- Lab 03 -->
+        <article class="course">
+          <a class="course__banner" href="lab-03.html"><img src="main_2_00000.png" alt="Lab 03 — Performance Marketing" loading="lazy"></a>
+          <div class="course__code">Lab 03</div>
+          <div>
+            <span class="course__status">Đang mở đăng ký</span>
+            <h2 class="course__title">Performance Marketing: Xây hệ thống từ chiến lược đến doanh thu</h2>
+            <p class="course__desc">Làm chủ hệ thống Performance Marketing for SME chuẩn Fullstack: từ lập kế hoạch, chuẩn hóa Content, bứt phá doanh số qua quảng cáo đến đo lường và tối ưu hiệu quả từng đồng ngân sách.</p>
+            <div class="course__tags">
+              <span class="mono-tag">Research</span>
+              <span class="mono-tag">Chiến lược &amp; KPI</span>
+              <span class="mono-tag">Content &amp; Creative</span>
+              <span class="mono-tag">Tracking</span>
+              <span class="mono-tag">AI &amp; CRM</span>
+            </div>
+          </div>
+          <div class="course__aside">
+            <ul class="course__facts">
+              <li><span>Khai giảng</span><span>02.11.2026</span></li>
+              <li><span>Lịch học</span><span>19:30–21:30<br>Thứ 2 &amp; Thứ 6</span></li>
+              <li><span>Hình thức</span><span>Online — Google Meet</span></li>
+              <li><span>Thời lượng</span><span>7 buổi</span></li>
+            </ul>
+            <div class="course__price"><s>4,290,000 VND</s>3,861,000 VND</div>
+            <a class="btn btn--dark" href="lab-03.html">Xem chi tiết khóa học →</a>
+          </div>
+        </article>
+
+        <!-- Workshop -->
+        <article class="course">
+          <a class="course__banner" href="https://ws02-roan.vercel.app" target="_blank" rel="noopener"><img src="workshop-banner.jpg" alt="Entity LAB — Marketing Workshop" loading="lazy"></a>
+          <div class="course__code">Workshop</div>
+          <div>
+            <span class="course__status">Miễn phí · Hàng tuần</span>
+            <h2 class="course__title">Free Workshop Series: Team nhỏ, ngân sách giới hạn, marketing vẫn phải tăng trưởng</h2>
+            <p class="course__desc">Chuỗi workshop Marketing miễn phí cho Marketer, Creative và chủ doanh nghiệp SME/Startup. Mỗi buổi tập trung vào một bài toán, mỗi bài toán hướng đến một kết quả thực tế.</p>
+            <div class="course__tags">
+              <span class="mono-tag">Branding</span>
+              <span class="mono-tag">Marketing Strategy</span>
+              <span class="mono-tag">Performance Marketing</span>
+              <span class="mono-tag">Workflow AI</span>
+            </div>
+          </div>
+          <div class="course__aside">
+            <ul class="course__facts">
+              <li><span>Lịch</span><span>19:00<br>Thứ 3 &amp; Thứ 5</span></li>
+              <li><span>Hình thức</span><span>Livestream YouTube</span></li>
+              <li><span>Kênh</span><span>@nttLABlearn</span></li>
+            </ul>
+            <div class="course__price">Miễn phí</div>
+            <a class="btn btn--outline" href="https://ws02-roan.vercel.app" target="_blank" rel="noopener">Xem lịch workshop →</a>
+          </div>
+        </article>
+
+        <!-- Sắp ra mắt -->
+        <article class="course course--soon">
+          <!-- Banner chưa có: thay div này bằng <a class="course__banner" ...><img ...></a> khi có -->
+          <div class="course__banner course__banner--empty" aria-hidden="true"></div>
+          <div class="course__code">Lab tiếp theo</div>
+          <div>
+            <span class="course__status course__status--soon">Sắp ra mắt</span>
+            <h2 class="course__title">Các Lab chuyên đề mới đang được chuẩn bị</h2>
+            <p class="course__desc">Lịch khai giảng và nội dung chi tiết sẽ được cập nhật trên trang này và kênh YouTube @nttLABlearn. Theo dõi để nhận thông tin sớm nhất.</p>
+          </div>
+          <div class="course__aside">
+            <a class="btn btn--outline" href="https://www.youtube.com/@nttLABlearn" target="_blank" rel="noopener">Theo dõi YouTube →</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- CHƯƠNG TRÌNH -->
-  <section class="section" id="chuong-trinh">
-    <div class="section__label"><span class="eyebrow">Chương trình khóa học</span></div>
+  <!-- LỘ TRÌNH -->
+  <section class="section" id="lo-trinh">
+    <div class="section__label"><span class="eyebrow">Lộ trình học</span></div>
     <div class="section__content">
-      <p class="h-title reveal" style="max-width:46ch">Làm chủ hệ thống <strong>Performance Marketing for SME</strong> chuẩn Fullstack với lộ trình thực chiến: từ lập kế hoạch, chuẩn hóa Content, bứt phá doanh số qua quảng cáo đến đo lường và tối ưu hiệu quả từng đồng ngân sách.</p>
+      <p class="h-title reveal" style="max-width:40ch"><strong>Không cần học tất cả cùng lúc.</strong> Bắt đầu từ một vấn đề bạn muốn giải quyết, rồi đi sâu dần.</p>
 
-      <div class="acc reveal" style="margin-top:48px">
-        <details class="acc-item" open>
-          <summary><span class="idx idx--session">Buổi 1</span><span class="ttl">Performance Marketing Foundations</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <ul>
-              <li>3 Cấp độ mục tiêu của Performance Marketing</li>
-              <li>Tìm hiểu hệ thống Fullstack Performance Marketing tinh gọn cho SME</li>
-              <li>Đánh giá hiện trạng: doanh nghiệp bạn đang hổng ở mắt xích nào</li>
-            </ul>
-            <div class="output">📤 Đầu ra: Hệ thống Marketing tinh gọn cho doanh nghiệp SME + cấp độ mục tiêu ưu tiên</div>
-          </div></div></div>
-        </details>
-        <details class="acc-item">
-          <summary><span class="idx idx--session">Buổi 2</span><span class="ttl">Research</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <ul>
-              <li>Phân tích bối cảnh doanh nghiệp trước khi chạy Performance</li>
-              <li>Research thị trường và đối thủ với chi phí thấp nhất</li>
-              <li>Tìm hiểu phễu Marketing giúp doanh nghiệp SME giảm tải chi phí quảng cáo</li>
-              <li>Xác định điểm tắc nghẽn trong doanh nghiệp</li>
-            </ul>
-            <div class="output">📤 Đầu ra: Research Sheet + Sơ đồ phễu có đánh dấu điểm tắc nghẽn</div>
-          </div></div></div>
-        </details>
-        <details class="acc-item">
-          <summary><span class="idx idx--session">Buổi 3</span><span class="ttl">Hình thành chiến lược thực chiến và triển khai</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <ul>
-              <li>Tổng hợp research và insight thành chiến lược Performance Marketing</li>
-              <li>Xây dựng chiến lược Performance theo framework</li>
-              <li>Tính KPI ngược từ doanh thu và phân bổ ngân sách theo phễu</li>
-              <li>Mô hình triển khai một campaign với nguồn lực hạn chế</li>
-            </ul>
-            <div class="output">📤 Đầu ra: Performance Plan 1 trang + Bảng KPI ngược &amp; phân bổ ngân sách</div>
-          </div></div></div>
-        </details>
-        <details class="acc-item">
-          <summary><span class="idx idx--session">Buổi 4</span><span class="ttl">Offer, Content &amp; Creative phục vụ chuyển đổi</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <ul>
-              <li>Xây dựng Offer và cấu trúc thông điệp theo từng tầng phễu</li>
-              <li>Ma trận Content – Creative: sinh đủ biến thể để test</li>
-              <li>Quy trình Brief → Content → Creative → Review cho team ít người</li>
-              <li>Cấu trúc trang chuyển đổi và các lỗi làm rớt tỷ lệ chuyển đổi</li>
-            </ul>
-            <div class="output">📤 Đầu ra: Ma trận Content – Creative + Brief Landing Page</div>
-          </div></div></div>
-        </details>
-        <details class="acc-item">
-          <summary><span class="idx idx--session">Buổi 5</span><span class="ttl">Triển khai kênh &amp; Tracking</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <ul>
-              <li>Chọn kênh theo bài toán: Meta, TikTok, Google Search, Zalo, sàn TMĐT</li>
-              <li>Cấu trúc tài khoản và chiến dịch để đọc được số, test được biến</li>
-              <li>Thiết lập tracking: GA4, Google Tag Manager, Pixel và sự kiện chuyển đổi</li>
-              <li>UTM, quy ước đặt tên và checklist trước khi bật ngân sách</li>
-            </ul>
-            <div class="output">📤 Đầu ra: Cấu trúc campaign đa kênh + Checklist tracking</div>
-          </div></div></div>
-        </details>
-        <details class="acc-item">
-          <summary><span class="idx idx--session">Buổi 6</span><span class="ttl">Đọc Data, tối ưu và Kiểm soát dòng Lead</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <ul>
-              <li>Các chỉ số Marketing cốt lõi và tư duy Data-driven khi ra quyết định</li>
-              <li>Phân tích Data để hiểu bức tranh tổng thể, cấu trúc testing</li>
-              <li>Hiểu rõ thế nào là một Lead chất lượng, thu hút Lead với chi phí rẻ nhất</li>
-              <li>Nuôi dưỡng Lead, giảm thời gian chốt đơn và giảm tỷ lệ rơi rớt</li>
-            </ul>
-            <div class="output">📤 Đầu ra: Dashboard Marketing + Quy trình quản lý và nuôi dưỡng Lead</div>
-          </div></div></div>
-        </details>
-        <details class="acc-item">
-          <summary><span class="idx idx--session">Buổi 7</span><span class="ttl">Thực hành tổng hợp &amp; Ứng dụng AI tự động hóa</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <ul>
-              <li>Giải case giả định thường gặp trong thực tế</li>
-              <li>Hệ thống hóa công việc Marketing cho team 1-3 người</li>
-              <li>Ứng dụng AI trong research, sản xuất nội dung và phân tích data</li>
-              <li>Xây dựng hệ thống CRM tự động</li>
-            </ul>
-            <div class="output">📤 Đầu ra: Hồ sơ Performance hoàn chỉnh + Bộ AI/CRM tinh gọn</div>
-          </div></div></div>
-        </details>
+      <div class="rows reveal" style="margin-top:48px">
+        <div class="row">
+          <div class="row__index">01</div>
+          <div>
+            <div class="row__title">Tham gia Workshop miễn phí</div>
+            <div class="row__desc">Làm quen cách tư duy và framework của Entity LAB qua các buổi livestream 19:00 thứ 3 &amp; thứ 5 hàng tuần.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row__index">02</div>
+          <div>
+            <div class="row__title">Chọn một Lab chuyên sâu</div>
+            <div class="row__desc">Đăng ký Lab phù hợp với bài toán hiện tại — ví dụ Lab 03 nếu bạn cần một hệ thống Performance Marketing từ chiến lược đến doanh thu.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row__index">03</div>
+          <div>
+            <div class="row__title">Học tiếp với ưu đãi học viên cũ</div>
+            <div class="row__desc">Giảm 10% cho khóa thứ hai và 25% từ khóa thứ ba trở đi — xây dần năng lực Marketing toàn diện cho doanh nghiệp.</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -548,7 +515,7 @@
   <section class="section" id="quyen-loi">
     <div class="section__label"><span class="eyebrow">Quyền lợi học viên</span></div>
     <div class="section__content">
-      <p class="h-title reveal" style="max-width:44ch"><strong>Khóa học kết thúc sau 6 buổi, nhưng phần bạn giữ lại thì không.</strong> Record, tài liệu, template AI và ưu đãi cho những khóa sau đều đi cùng bạn.</p>
+      <p class="h-title reveal" style="max-width:44ch"><strong>Khóa học kết thúc, nhưng phần bạn giữ lại thì không.</strong> Áp dụng cho học viên các Lab tại Entity LAB.</p>
 
       <div class="acc reveal" style="margin-top:48px">
         <details class="acc-item" open>
@@ -572,11 +539,11 @@
           </div></div></div>
         </details>
         <details class="acc-item">
-          <summary><span class="idx">03</span><span class="ttl">Ưu đãi cho các khóa tiếp theo</span><span class="plus"></span></summary>
+          <summary><span class="idx">03</span><span class="ttl">Cộng đồng lớp học</span><span class="plus"></span></summary>
           <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
             <ul>
-              <li>Giảm 10% khi đăng ký khóa học thứ hai.</li>
-              <li>Giảm 25% cho khóa thứ ba trở đi.</li>
+              <li>Được thêm vào group Zalo của lớp ngay sau khi hoàn tất học phí.</li>
+              <li>Link vào học được gửi trong group trước mỗi buổi học 30 phút.</li>
             </ul>
           </div></div></div>
         </details>
@@ -584,34 +551,22 @@
     </div>
   </section>
 
-  <!-- CHÍNH SÁCH -->
-  <section class="section" id="chinh-sach">
-    <div class="section__label"><span class="eyebrow">Chính sách khóa học</span></div>
+  <!-- ƯU ĐÃI -->
+  <section class="section section--dark" id="uu-dai">
+    <div class="section__label"><span class="eyebrow">Ưu đãi học viên cũ</span></div>
     <div class="section__content">
-      <div class="rows reveal">
-        <div class="row">
-          <div class="row__index">01</div>
-          <div>
-            <div class="row__title">Đặt trước giữ giá ưu đãi</div>
-            <div class="row__desc">Đặt trước <strong>miễn phí</strong> để giữ mức giá ưu đãi của khóa học.</div>
-            <div class="row__desc"><em>Lưu ý: Đặt trước không đồng nghĩa với giữ chỗ — chỗ học chỉ được giữ khi đã thanh toán.</em></div>
-          </div>
+      <div class="offer reveal">
+        <div class="offer__item">
+          <div class="offer__num">10%</div>
+          <p class="offer__label">Giảm học phí khi đăng ký khóa học thứ hai tại Entity LAB.</p>
         </div>
-        <div class="row">
-          <div class="row__index">02</div>
-          <div>
-            <div class="row__title">Hoàn tất học phí để tham gia lớp học</div>
-            <div class="row__desc">Đăng ký trước ngày <strong>31/10/2026</strong> để được giữ ưu đãi. Học phí cần được thanh toán đầy đủ để chính thức tham gia lớp học.</div>
-            <div class="row__desc"><em>Lưu ý: Chúng mình sẽ KHÔNG HOÀN TRẢ học phí với MỌI LÝ DO.</em></div>
-          </div>
+        <div class="offer__item">
+          <div class="offer__num">25%</div>
+          <p class="offer__label">Giảm học phí cho khóa thứ ba trở đi.</p>
         </div>
-        <div class="row">
-          <div class="row__index">03</div>
-          <div>
-            <div class="row__title">Sau khi thanh toán đầy đủ</div>
-            <div class="row__desc">Học viên được thêm vào <strong>group Zalo</strong> của lớp và nhận <strong>tài liệu khóa học</strong>.</div>
-            <div class="row__desc">Link vào học được gửi trong group <strong>trước mỗi buổi học 30 phút</strong>.</div>
-          </div>
+        <div class="offer__item">
+          <div class="offer__num">0đ</div>
+          <p class="offer__label">Workshop Series luôn miễn phí cho tất cả mọi người.</p>
         </div>
       </div>
     </div>
@@ -623,95 +578,57 @@
     <div class="section__content">
       <div class="acc reveal">
         <details class="acc-item" open>
-          <summary><span class="idx">01</span><span class="ttl">Tôi chưa có nền tảng marketing thì học có theo kịp không?</span><span class="plus"></span></summary>
+          <summary><span class="idx">01</span><span class="ttl">Workshop và Lab khác nhau như thế nào?</span><span class="plus"></span></summary>
           <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <p>Hầu hết kiến thức trong khóa học thuộc cấp độ trung cấp trở lên. Tụi mình có gửi sẵn các tài liệu kiến thức cơ bản để bạn tự học, tuy nhiên để theo kịp tiến độ và tiếp thu tốt nhất trên lớp, bạn nên chủ động trang bị trước các kiến thức nền tảng này nhé.</p>
+            <p>Workshop là các buổi livestream miễn phí, mỗi buổi giải một bài toán cụ thể. Lab là khóa học chuyên sâu nhiều buổi, có lộ trình, đầu ra cho từng buổi, record, tài liệu và tài nguyên AI đi kèm.</p>
           </div></div></div>
         </details>
         <details class="acc-item">
-          <summary><span class="idx">02</span><span class="ttl">Đặt trước (Pre-order) có mất phí không và có chắc chắn giữ được chỗ học?</span><span class="plus"></span></summary>
+          <summary><span class="idx">02</span><span class="ttl">Tôi chưa có nền tảng marketing thì nên bắt đầu từ đâu?</span><span class="plus"></span></summary>
           <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <p>Việc đặt trước là hoàn toàn miễn phí để bạn giữ mức giá ưu đãi. Tuy nhiên, đặt trước không đồng nghĩa với giữ chỗ, chỗ học chỉ chính thức được xác nhận khi bạn hoàn tất thanh toán học phí cho tụi mình.</p>
+            <p>Hầu hết kiến thức trong các Lab thuộc cấp độ trung cấp trở lên. Bạn nên bắt đầu với Workshop Series miễn phí và các tài liệu nền tảng tụi mình gửi sẵn, sau đó chọn Lab phù hợp để đi sâu.</p>
           </div></div></div>
         </details>
         <details class="acc-item">
-          <summary><span class="idx">03</span><span class="ttl">Ưu đãi học phí được áp dụng như thế nào?</span><span class="plus"></span></summary>
+          <summary><span class="idx">03</span><span class="ttl">Nếu bỏ lỡ một buổi học thì sao?</span><span class="plus"></span></summary>
           <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <p>Bạn được giảm 10% học phí, từ 4,290,000 VND còn 3,861,000 VND, khi đăng ký trước ngày 31/10/2026 (miễn là hoàn tất thanh toán đúng hạn cho tụi mình).</p>
+            <p>Toàn bộ các buổi học trong Lab đều được ghi hình và bạn có 1 năm quyền truy cập record để chủ động ôn lại bất cứ lúc nào.</p>
           </div></div></div>
         </details>
         <details class="acc-item">
-          <summary><span class="idx">04</span><span class="ttl">Điều gì xảy ra nếu tôi thanh toán sau ngày 31/10/2026?</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <p>Nếu bạn đã đăng ký trước ngày 31/10/2026, ưu đãi vẫn được giữ cho bạn. Bạn chỉ cần hoàn tất thanh toán để chính thức tham gia lớp học cùng tụi mình.</p>
-          </div></div></div>
-        </details>
-        <details class="acc-item">
-          <summary><span class="idx">05</span><span class="ttl">Khóa học có chính sách hoàn tiền không nếu tôi bận không học được?</span><span class="plus"></span></summary>
+          <summary><span class="idx">04</span><span class="ttl">Khóa học có chính sách hoàn tiền không?</span><span class="plus"></span></summary>
           <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
             <p>Tụi mình không hỗ trợ hoàn trả học phí với bất kỳ lý do nào sau khi bạn đã hoàn tất thanh toán. Bạn nên cân nhắc kỹ lịch trình cá nhân trước khi chuyển khoản nhé.</p>
           </div></div></div>
         </details>
         <details class="acc-item">
-          <summary><span class="idx">06</span><span class="ttl">Nếu nghỉ học hoặc bỏ lỡ một buổi thì có được học bù hay xem lại bài giảng không?</span><span class="plus"></span></summary>
+          <summary><span class="idx">05</span><span class="ttl">Ưu đãi cho học viên cũ được áp dụng thế nào?</span><span class="plus"></span></summary>
           <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <p>Bạn hoàn toàn yên tâm. Toàn bộ các buổi học đều được ghi hình và bạn có 1 năm quyền truy cập vào video record để chủ động ôn lại bài bất cứ lúc nào.</p>
-          </div></div></div>
-        </details>
-        <details class="acc-item">
-          <summary><span class="idx">07</span><span class="ttl">Sau khi thanh toán học phí xong thì quy trình tiếp theo là gì?</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <p>Tụi mình sẽ thêm bạn vào Group Zalo của lớp và gửi bộ tài liệu khóa học. Link truy cập lớp học trực tuyến sẽ được tụi mình gửi trong group trước mỗi buổi học 30 phút.</p>
-          </div></div></div>
-        </details>
-        <details class="acc-item">
-          <summary><span class="idx">08</span><span class="ttl">Bộ tài nguyên AI, tài liệu đi kèm và ưu đãi cho khóa sau như thế nào?</span><span class="plus"></span></summary>
-          <div class="body-wrap"><div class="body-inner"><div class="body-inner-pad">
-            <p>Bạn được truy cập vĩnh viễn bộ tài liệu khóa học, hệ thống tài liệu AI và Template/Claude Skill do tụi mình soạn sẵn. Đồng thời, tụi mình dành tặng ưu đãi giảm 10% cho khóa học thứ hai và 25% từ khóa thứ ba trở đi cho học viên cũ.</p>
+            <p>Học viên đã tham gia một Lab được giảm 10% học phí cho khóa thứ hai và 25% từ khóa thứ ba trở đi.</p>
           </div></div></div>
         </details>
       </div>
     </div>
-  </section>
-
-  <!-- HỌC PHÍ -->
-  <section class="section section--dark" id="hoc-phi">
-    <div class="section__label"><span class="eyebrow">Học phí</span></div>
-    <div class="section__content">
-      <div class="price reveal">
-        <p class="price__old"><s>4,290,000 VND</s> <span class="price__badge">Ưu đãi 10%</span></p>
-        <div class="price__amount">3,861,000 VND</div>
-      </div>
-      <p class="body-md reveal" style="margin-top:24px"><em>Lưu ý: Ưu đãi có hiệu lực khi đăng ký trước ngày 31/10/2026.</em></p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta" id="dang-ky">
-    <div class="eyebrow reveal" style="color:rgba(255,255,255,.5)">Đăng ký</div>
-    <h2 class="h-display reveal" style="margin-top:20px">đăng ký khóa học<br>ngay hôm nay</h2>
-    <p class="cta__sub reveal">Đặt trước miễn phí để giữ ưu đãi 10% — áp dụng khi đăng ký trước ngày 31/10/2026.</p>
-    <a class="btn reveal" href="https://docs.google.com/forms/d/e/1FAIpQLSd73mCPdU_inwzdKn80i4Xcv_J9pYE5-rxLw2jJ-RfnESPWFg/viewform?usp=publish-editor">👉 Đặt trước miễn phí</a>
   </section>
 
 </main>
 
 <footer>
   <div>
-    <strong>Khai giảng</strong>
-    02.11.2026
+    <strong>Đang mở đăng ký</strong>
+    Lab 03 — Performance Marketing<br>Khai giảng 02.11.2026
   </div>
   <div>
-    <strong>Lịch học</strong>
-    19:30 – 21:30<br>Thứ 2 &amp; Thứ 6 hàng tuần
+    <strong>Workshop miễn phí</strong>
+    19:00 Thứ 3 &amp; Thứ 5<br>Livestream YouTube
   </div>
   <div>
     <strong>Hình thức</strong>
-    Online — Google Meet<br>7 buổi
+    Online — Google Meet<br>&amp; YouTube
   </div>
   <div>
-    <strong>Tình trạng</strong>
-    Đang mở đăng ký
+    <strong>Kênh</strong>
+    <a href="https://www.youtube.com/@nttLABlearn" target="_blank" rel="noopener">YouTube @nttLABlearn</a>
   </div>
   <div class="footer-logo">
     <img src="entity-lab-logo-footer.webp" alt="Entity Lab">
